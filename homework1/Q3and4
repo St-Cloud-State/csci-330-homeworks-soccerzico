@@ -1,0 +1,32 @@
+Script started on 2025-01-25 06:23:38+00:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="143" LINES="29"]
+[0;32m@soccerzico [0m➜ [1;34m/workspaces/csci-330-homeworks-soccerzico/homework1 [0;36m([1;31mmain[0;36m) [0m$ sbcl
+This is SBCL 1.4.3, an implementation of ANSI Common Lisp.
+More information about SBCL is available at <http://www.sbcl.org/>.
+
+SBCL is free software, provided as is, with absolutely no warranty.
+It is mostly in the public domain; some portions are provided under
+BSD-style licenses.  See the CREDITS and COPYING files in the
+distribution for more information.
+* (caddr '(a b x d))
+
+X
+* (car(cadadr '(a(b(x d)))))
+
+X
+* c (caadr(cadaar'(((a(b(x)d))))))
+
+X
+* (cons 'a(cons 'b(cons 'c x(cons 'd nil))))
+
+(A B X D)
+* (cons 'a(cons 'b   (cons 'b(cons(cons 'x(cons 'd nil))nil))nil))
+
+(A (B (X D)))
+* (cons(cons(cons'a(cons(cons'b(cons(cons'x nil)(cons'd nil)))nil))nil)nil)
+
+(((A (B (X) D))))
+* (SB0 -EXT:EXIT)
+[0;32m@soccerzico [0m➜ [1;34m/workspaces/csci-330-homeworks-soccerzico/homework1 [0;36m([1;31mmain[0;36m) [0m$ exit
+exit
+
+Script done on 2025-01-25 06:28:21+00:00 [COMMAND_EXIT_CODE="0"]

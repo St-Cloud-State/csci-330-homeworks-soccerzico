@@ -1,0 +1,247 @@
+Script started on 2025-02-03 23:59:03+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="143" LINES="9"]
+[0;32m@soccerzico [0m➜ [1;34m/workspaces/csci-330-homeworks-soccerzico/homework2 [0;36m([1;31mmain[0;36m) [0m$ 
+[K[0;32m@soccerzico [0m➜ [1;34m/workspaces/csci-330-homeworks-soccerzico/homework2 [0;36m([1;31mmain[0;36m) [0m$ 
+[K[0;32m@soccerzico [0m➜ [1;34m/workspaces/csci-330-homeworks-soccerzico/homework2 [0;36m([1;31mmain[0;36m) [0m$ sbcl
+This is SBCL 1.4.3, an implementation of ANSI Common Lisp.
+More information about SBCL is available at <http://www.sbcl.org/>.
+
+SBCL is free software, provided as is, with absolutely no warranty.
+It is mostly in the public domain; some portions are provided under
+BSD-style licenses.  See the CREDITS and COPYING files in the
+distribution for more information.
+* (not (equal 3 (ABS -3)))
+
+NIL
+* (/(+ 8 12) 2)
+
+10
+* (+(* 3 3)(* 4 4))
+
+25
+* (DEFUN MILES-PER-GALLON (INITIAL-ODOMETER-READING FINAL-ODOMETER-READING GALLONS-CONSUMED)(/(- FINAL-ODOMETER-READING INITIAL-ODOMETER-READING)GALLONS-CONSUMED))
+
+MILES-PER-GALLON
+* (MILES-PER-GALLON 10 20 5)
+
+2
+* (THIRD(THE QUICK BROWN FOX))
+; in: THIRD (THE QUICK BROWN FOX)
+;     (THE QUICK BROWN FOX)
+; 
+; caught ERROR:
+;   error while parsing arguments to special operator THE:
+;     too many elements in
+;       (QUICK BROWN FOX)
+;     to satisfy lambda list
+;       (SB-C::VALUE-TYPE SB-KERNEL:FORM):
+;     exactly 2 expected, but got 3
+; 
+; compilation unit finished
+;   caught 1 ERROR condition
+
+debugger invoked on a SB-INT:COMPILED-PROGRAM-ERROR in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  Execution of a form compiled with errors.
+Form:
+  (THE QUICK BROWN FOX)
+Compile-time error:
+  error while parsing arguments to special operator THE:
+  too many elements in
+    (QUICK BROWN FOX)
+  to satisfy lambda list
+    (SB-C::VALUE-TYPE SB-KERNEL:FORM):
+  exactly 2 expected, but got 3
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Exit debugger, returning to top level.
+
+((LAMBDA ()))
+   source: (THE QUICK BROWN FOX)
+0] (THIRD '(THE QUICK BROWN FOX))
+
+BROWN
+0] (LIST 2 AND 2 IS 4)
+; in: THIRD (THE QUICK BROWN FOX)
+;     (LIST 2 AND 2 IS 4)
+; 
+; caught WARNING:
+;   undefined variable: AND
+; 
+; caught WARNING:
+;   undefined variable: IS
+; 
+; compilation unit finished
+;   Undefined variables:
+;     AND IS
+;   caught 2 WARNING conditions
+
+debugger invoked on a UNBOUND-VARIABLE in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  The variable AND is unbound.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Reduce debugger level (to debug level 1).
+  1:         Exit debugger, returning to top level.
+
+((LAMBDA (#:G390)) #<unused argument>)
+   source: (LIST 2 AND 2 IS 4)
+0[2] (LIST 2 'AND 2 'IS 4)
+
+(2 AND 2 IS 4)
+0[2] (+1 '(LENGTH(LIST T T T T)))
+; in: THIRD (THE QUICK BROWN FOX)
+;     (1 '(LENGTH (LIST T T T T)))
+; 
+; caught ERROR:
+;   illegal function call
+; 
+; compilation unit finished
+;   caught 1 ERROR condition
+
+debugger invoked on a SB-INT:COMPILED-PROGRAM-ERROR in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  Execution of a form compiled with errors.
+Form:
+  (1 '(LENGTH (LIST T T T T)))
+Compile-time error:
+  illegal function call
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Reduce debugger level (to debug level 2).
+  1:         Reduce debugger level (to debug level 1).
+  2:         Exit debugger, returning to top level.
+
+((LAMBDA (#:G392)) #<unused argument>)
+   source: (1 '(LENGTH (LIST T T T T)))
+0[3] (= +1  1(LENGTH(LIST T T T T)))
+
+5
+0[3] (CONS 'PATRICK (SEYMOUR MARVIN))
+; in: THIRD (THE QUICK BROWN FOX)
+;     (SEYMOUR MARVIN)
+; 
+; caught WARNING:
+;   undefined variable: MARVIN
+; 
+; caught STYLE-WARNING:
+;   undefined function: SEYMOUR
+; 
+; compilation unit finished
+;   Undefined function:
+;     SEYMOUR
+;   Undefined variable:
+;     MARVIN
+;   caught 1 WARNING condition
+;   caught 1 STYLE-WARNING condition
+
+debugger invoked on a UNBOUND-VARIABLE in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  The variable MARVIN is unbound.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Reduce debugger level (to debug level 3).
+  1:         Reduce debugger level (to debug level 2).
+  2:         Reduce debugger level (to debug level 1).
+  3:         Exit debugger, returning to top level.
+
+((LAMBDA (#:G394)) #<unused argument>)
+   source: (SEYMOUR MARVIN)
+0[4] (CONS 'PATRICK '(SEYMOUR MARVIN))
+
+(PATRICK SEYMOUR MARVIN)
+0[4] CO  (CONS 'PATRICK(LIST SEYMOUR MARVIN))
+; in: THIRD (THE QUICK BROWN FOX)
+;     (LIST SEYMOUR MARVIN)
+; 
+; caught WARNING:
+;   undefined variable: MARVIN
+; 
+; caught WARNING:
+;   undefined variable: SEYMOUR
+; 
+; compilation unit finished
+;   Undefined variables:
+;     MARVIN SEYMOUR
+;   caught 2 WARNING conditions
+
+debugger invoked on a UNBOUND-VARIABLE in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  The variable SEYMOUR is unbound.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Reduce debugger level (to debug level 4).
+  1:         Reduce debugger level (to debug level 3).
+  2:         Reduce debugger level (to debug level 2).
+  3:         Reduce debugger level (to debug level 1).
+  4:         Exit debugger, returning to top level.
+
+((LAMBDA (#:G396)) #<unused argument>)
+   source: (LIST SEYMOUR MARVIN)
+0[5] (CONS 'PATRICK (LIST 'SEYMOUR 'MARVIN))
+
+(PATRICK SEYMOUR MARVIN)
+0[5] (LIST 'CONS T NIL)
+
+(CONS T NIL)
+0[5] (EVAL(LIST 'CONS T NIL))
+
+(T)
+0[5] (EVAL(EVAL(LIST 'CONS T NIL)))
+; in: T
+;     (T)
+; 
+; caught WARNING:
+;   The function T is undefined, and its name is reserved by ANSI CL so that even
+;   if it were defined later, the code doing so would not be portable.
+; 
+; compilation unit finished
+;   Undefined function:
+;     T
+;   caught 1 WARNING condition
+
+debugger invoked on a UNDEFINED-FUNCTION in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  The function COMMON-LISP:T is undefined.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Reduce debugger level (to debug level 5).
+  1:         Reduce debugger level (to debug level 4).
+  2:         Reduce debugger level (to debug level 3).
+  3:         Reduce debugger level (to debug level 2).
+  4:         Reduce debugger level (to debug level 1).
+  5:         Exit debugger, returning to top level.
+
+("undefined function")
+0[6] (APPLY #'CONS '(T NIL))
+; No debug variables for current frame: using EVAL instead of EVAL-IN-FRAME.
+(T)
+0[6] (EVAL NIL)
+; No debug variables for current frame: using EVAL instead of EVAL-IN-FRAME.
+NIL
+0[6] (LIST 'EVAL NIL)
+; No debug variables for current frame: using EVAL instead of EVAL-IN-FRAME.
+(EVAL NIL)
+0[6] (EVAL(LIST 'EVAL NIL))
+; No debug variables for current frame: using EVAL instead of EVAL-IN-FRAME.
+NIL
+
+
+0[7] sb  (SV-  B-EXT:EXIT)
+[0;32m@soccerzico [0m➜ [1;34m/workspaces/csci-330-homeworks-soccerzico/homework2 [0;36m([1;31mmain[0;36m) [0m$ EXIT
+bash: EXIT: command not found
+[0;32m@soccerzico [1;31m➜ [1;34m/workspaces/csci-330-homeworks-soccerzico/homework2 [0;36m([1;31mmain[0;36m) [0m$ exit
+exit
+
+Script done on 2025-02-04 00:09:56+00:00 [COMMAND_EXIT_CODE="127"]

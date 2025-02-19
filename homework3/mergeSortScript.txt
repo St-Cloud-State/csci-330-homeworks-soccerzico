@@ -1,0 +1,70 @@
+Script started on 2025-02-19 00:21:39+00:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="123" LINES="9"]
+[0;32m@soccerzico [0m➜ [1;34m/workspaces/csci-330-homeworks-soccerzico [0;36m([1;31mmain[0;36m) [0m$ sbcl
+This is SBCL 1.4.3, an implementation of ANSI Common Lisp.
+More information about SBCL is available at <http://www.sbcl.org/>.
+
+SBCL is free software, provided as is, with absolutely no warranty.
+It is mostly in the public domain; some portions are provided under
+BSD-style licenses.  See the CREDITS and COPYING files in the
+distribution for more information.
+* 
+(defun partition-list (baselist list1 list2)
+  (cond
+    ;; Base case: when the list is empty, return the two halves (reversed for correct order)
+    ((null baselist) (list (reverse list1) (reverse list2)))  
+    (t (progn
+         ;; Add the first element of baselist to list1
+         (setf list1 (cons (car baselist) list1))
+         (setf baselist (cdr baselist)) ;; Move to the next element
+
+         ;; If there's another element, add it to list2
+         (when baselist
+           (setf list2 (cons (car baselist) list2))
+           (setf baselist (cdr baselist))) ;; Move to the next element
+
+         ;; Recursively continue partitioning
+         (partition-list baselist list1 list2)))))
+
+
+PARTITION-LIST
+* 
+(defun merge-lists(list1 list2)
+  (cond
+    ;; If one list is empty, return the other list
+    ((null list1) list2)
+    ((null list2) list1) 
+    ;; If the first element of list1 is smaller, keep it and merge the rest
+    ((< (car list1) (car list2))  
+     (cons (car list1) (merge-lists(cdr list1) list2)))
+    ;; Otherwise, keep the first element of list2 and merge the rest
+    (t (cons (car list2) (merge-lists list1 (cdr list2)))))) 
+
+
+(defun 
+MERGE-LISTS
+* mergesort (list1)
+  ;; Base case
+  (if (or (null list1) (null (cdr list1)))
+      list1
+      ;; Otherwise, split the list into two halves and sort them recursively
+      (let ((first-half (car (partition-list list1 '() '()))) ;; Get first half
+            (second-half (cadr (partition-list list1 '() '())))) ;; Get second half
+        
+        ;; Recursively sort each half
+        (setf first-half (mergesort first-half))
+        (setf second-half (mergesort second-half))
+       
+        ;; Merge the sorted halves back together
+        (merge-lists first-half second-half))))
+
+
+(mergesort '(7 8 
+MERGESORT
+* 9 2 3 6 5 1 0))
+
+(0 1 2 3 5 6 7 8 9)
+* (SB-EXT:EXIT)
+[0;32m@soccerzico [0m➜ [1;34m/workspaces/csci-330-homeworks-soccerzico [0;36m([1;31mmain[0;36m) [0m$ exit
+exit
+
+Script done on 2025-02-19 00:22:01+00:00 [COMMAND_EXIT_CODE="0"]

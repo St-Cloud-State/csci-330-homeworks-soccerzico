@@ -1,0 +1,39 @@
+Script started on 2025-02-19 00:14:34+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="140" LINES="9"]
+[0;32m@soccerzico [0m➜ [1;34m/workspaces/csci-330-homeworks-soccerzico/homework3 [0;36m([1;31mmain[0;36m) [0m$ sbcl
+This is SBCL 1.4.3, an implementation of ANSI Common Lisp.
+More information about SBCL is available at <http://www.sbcl.org/>.
+
+SBCL is free software, provided as is, with absolutely no warranty.
+It is mostly in the public domain; some portions are provided under
+BSD-style licenses.  See the CREDITS and COPYING files in the
+distribution for more information.
+* (defun insert-sorted (item sorted-list)
+  
+  (cond
+    ((null sorted-list) (list item))  ;; If list is empty, return a list with just the item
+    ((<= item (car sorted-list)) (cons item sorted-list))  ;; If the item is smaller or equal to the first item, insert at the front
+    ((> item (car (last sorted-list))) ;; If the item is greater than the last item, append it to the end
+     (append sorted-list (list item)))
+    (t (cons (car sorted-list) (insert-sorted item (cdr sorted-list)))))) ;; Otherwise, recursively find the right place in the middle of the sorted list
+
+
+(defun insertion-sort (
+INSERT-SORTED
+* sorted-list unsorted-list)
+  "Sorts a list using insertion sort."
+  (cond
+    ((null unsorted-list) sorted-list)  ;; Base case
+    (t (insertion-sort 
+         (insert-sorted (car unsorted-list) sorted-list)  ;; Insert the item 
+         (cdr unsorted-list)))))  ;; Continue with remaining items
+
+(in
+INSERTION-SORT
+* sertion-sort '() '(3 1 4 4 1 1 0 19 5 9 2 6))
+
+(0 1 1 1 2 3 4 4 5 6 9 19)
+* (SB-EXT:EXIT)
+[0;32m@soccerzico [0m➜ [1;34m/workspaces/csci-330-homeworks-soccerzico/homework3 [0;36m([1;31mmain[0;36m) [0m$ exit
+exit
+
+Script done on 2025-02-19 00:14:58+00:00 [COMMAND_EXIT_CODE="0"]

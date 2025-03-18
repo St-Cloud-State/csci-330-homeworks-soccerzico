@@ -1,0 +1,400 @@
+Script started on 2025-03-18 21:40:21+00:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="68" LINES="9"]
+[0;32m@soccerzico [0m➜ [1;34m/workspaces/csci-330-homeworks-soccerzico [0;36m([1;31mmain[0;36m) [0m$ sbc l
+This is SBCL 1.4.3, an implementation of ANSI Common Lisp.
+More information about SBCL is available at <http://www.sbcl.org/>.
+
+SBCL is free software, provided as is, with absolutely no warranty.
+It is mostly in the public domain; some portions are provided under
+BSD-style licenses.  See the CREDITS and COPYING files in the
+distribution for more information.
+* (load "recursiveDescentParser.lisp")
+
+; file: /workspaces/csci-330-homeworks-soccerzico/recursiveDescentParser.lisp
+; in: DEFUN IFN
+;     (EFN (CDR STR))
+; 
+; caught STYLE-WARNING:
+;   undefined function: EFN
+
+;     (SFN E)
+; 
+; caught STYLE-WARNING:
+;   undefined function: SFN
+
+;     (XFN S)
+; 
+; caught STYLE-WARNING:
+;   undefined function: XFN
+; 
+; compilation unit finished
+;   Undefined functions:
+;     EFN SFN XFN
+;   caught 3 STYLE-WARNING conditions
+
+; file: /workspaces/csci-330-homeworks-soccerzico/recursiveDescentParser.lisp
+; in: DEFUN XFN
+;     (SFN (CDR STR))
+; 
+; caught STYLE-WARNING:
+;   undefined function: SFN
+; 
+; compilation unit finished
+;   Undefined function:
+;     SFN
+;   caught 1 STYLE-WARNING condition
+
+; file: /workspaces/csci-330-homeworks-soccerzico/recursiveDescentParser.lisp
+; in: DEFUN EFN
+;     (EPRIMEFN G)
+; 
+; caught STYLE-WARNING:
+;   undefined function: EPRIMEFN
+
+;     (GFN STR)
+; 
+; caught STYLE-WARNING:
+;   undefined function: GFN
+; 
+; compilation unit finished
+;   Undefined functions:
+;     EPRIMEFN GFN
+;   caught 2 STYLE-WARNING conditions
+
+; file: /workspaces/csci-330-homeworks-soccerzico/recursiveDescentParser.lisp
+; in: DEFUN EPRIMEFN
+;     (GFN (CDR STR))
+; 
+; caught STYLE-WARNING:
+;   undefined function: GFN
+; 
+; compilation unit finished
+;   Undefined function:
+;     GFN
+;   caught 1 STYLE-WARNING condition
+
+; file: /workspaces/csci-330-homeworks-soccerzico/recursiveDescentParser.lisp
+; in: DEFUN OFN
+;     (GFN (CDR STR))
+; 
+; caught STYLE-WARNING:
+;   undefined function: GFN
+; 
+; compilation unit finished
+;   Undefined function:
+;     GFN
+;   caught 1 STYLE-WARNING condition
+
+; file: /workspaces/csci-330-homeworks-soccerzico/recursiveDescentParser.lisp
+; in: DEFUN SFN
+;     (LFN (CDR STR))
+; 
+; caught STYLE-WARNING:
+;   undefined function: LFN
+; 
+; compilation unit finished
+;   Undefined function:
+;     LFN
+;   caught 1 STYLE-WARNING condition
+
+; file: /workspaces/csci-330-homeworks-soccerzico/recursiveDescentParser.lisp
+; in: DEFUN LFN
+;     (LPRIMEFN (CDR STR))
+; 
+; caught STYLE-WARNING:
+;   undefined function: LPRIMEFN
+; 
+; compilation unit finished
+;   Undefined function:
+;     LPRIMEFN
+;   caught 1 STYLE-WARNING condition
+
+T
+* (parse-input '(i x o y o w d s s b e s))
+
+(IN IFN) 
+(I X O Y O W D S S B E S) 
+(IN EFN) 
+(X O Y O W D S S B E S) 
+(IN GFN) 
+(X O Y O W D S S B E S) 
+(IN EPRIMEFN) 
+(O Y O W D S S B E S) 
+(IN GFN) 
+(Y O W D S S B E S) 
+(IN EPRIMEFN) 
+(O W D S S B E S) 
+(IN GFN) 
+(W D S S B E S) 
+(IN EPRIMEFN) 
+(D S S B E S) 
+(IN SFN) 
+(D S S B E S) 
+(IN LFN) 
+(S S B E S) 
+(IN LPRIMEFN) 
+(S B E S) 
+(IN LPRIMEFN) 
+(B E S) 
+(IN XFN) 
+(E S) 
+(IN SFN) 
+(S) Parse successful!
+NIL
+* (parse-input '(i w s e s))
+
+(IN IFN) 
+(I W S E S) 
+(IN EFN) 
+(W S E S) 
+(IN GFN) 
+(W S E S) 
+(IN EPRIMEFN) 
+(S E S) 
+(IN SFN) 
+(S E S) 
+(IN XFN) 
+(E S) 
+(IN SFN) 
+(S) Parse successful!
+NIL
+* (parse-input '(izo   z o z s))
+
+(IN IFN) 
+(I Z O Z S) 
+(IN EFN) 
+(Z O Z S) 
+(IN GFN) 
+(Z O Z S) 
+(IN EPRIMEFN) 
+(O Z S) 
+(IN GFN) 
+(Z S) 
+(IN EPRIMEFN) 
+(S) 
+(IN SFN) 
+(S) 
+(IN XFN) 
+NIL Parse successful!
+NIL
+* (parse-input '(i y o z d s b e s))
+
+(IN IFN) 
+(I Y O Z D S B E S) 
+(IN EFN) 
+(Y O Z D S B E S) 
+(IN GFN) 
+(Y O Z D S B E S) 
+(IN EPRIMEFN) 
+(O Z D S B E S) 
+(IN GFN) 
+(Z D S B E S) 
+(IN EPRIMEFN) 
+(D S B E S) 
+(IN SFN) 
+(D S B E S) 
+(IN LFN) 
+(S B E S) 
+(IN LPRIMEFN) 
+(B E S) 
+(IN XFN) 
+(E S) 
+(IN SFN) 
+(S) Parse successful!
+NIL
+* ' (parse-input '(i z o z s e s))
+
+(IN IFN) 
+(I Z O Z S E S) 
+(IN EFN) 
+(Z O Z S E S) 
+(IN GFN) 
+(Z O Z S E S) 
+(IN EPRIMEFN) 
+(O Z S E S) 
+(IN GFN) 
+(Z S E S) 
+(IN EPRIMEFN) 
+(S E S) 
+(IN SFN) 
+(S E S) 
+(IN XFN) 
+(E S) 
+(IN SFN) 
+(S) Parse successful!
+NIL
+* (parse-input '(i x d s s b))
+
+(IN IFN) 
+(I X D S S B) 
+(IN EFN) 
+(X D S S B) 
+(IN GFN) 
+(X D S S B) 
+(IN EPRIMEFN) 
+(D S S B) 
+(IN SFN) 
+(D S S B) 
+(IN LFN) 
+(S S B) 
+(IN LPRIMEFN) 
+(S B) 
+(IN LPRIMEFN) 
+(B) 
+(IN XFN) 
+NIL Parse successful!
+NIL
+* (print     parse-input '(i x d s s s s b))
+
+(IN IFN) 
+(I X D S S S S B) 
+(IN EFN) 
+(X D S S S S B) 
+(IN GFN) 
+(X D S S S S B) 
+(IN EPRIMEFN) 
+(D S S S S B) 
+(IN SFN) 
+(D S S S S B) 
+(IN LFN) 
+(S S S S B) 
+(IN LPRIMEFN) 
+(S S S B) 
+(IN LPRIMEFN) 
+(S S B) 
+(IN LPRIMEFN) 
+(S B) 
+(IN LPRIMEFN) 
+(B) 
+(IN XFN) 
+NIL Parse successful!
+NIL
+* (parse-input '(i x o y o o w d s s b e s))
+
+(IN IFN) 
+(I X O Y O O W D S S B E S) 
+(IN EFN) 
+(X O Y O O W D S S B E S) 
+(IN GFN) 
+(X O Y O O W D S S B E S) 
+(IN EPRIMEFN) 
+(O Y O O W D S S B E S) 
+(IN GFN) 
+(Y O O W D S S B E S) 
+(IN EPRIMEFN) 
+(O O W D S S B E S) 
+(IN GFN) 
+(O W D S S B E S) Parse error. Parse Failed.
+NIL
+* (parse-input '(iw    w x e s))
+
+(IN IFN) 
+(I W X E S) 
+(IN EFN) 
+(W X E S) 
+(IN GFN) 
+(W X E S) 
+(IN EPRIMEFN) 
+(X E S) 
+(IN SFN) 
+(X E S) Parse error. Parse Failed.
+NIL
+* (parse-input '(i z o z s e z))
+
+(IN IFN) 
+(I Z O Z S E Z) 
+(IN EFN) 
+(Z O Z S E Z) 
+(IN GFN) 
+(Z O Z S E Z) 
+(IN EPRIMEFN) 
+(O Z S E Z) 
+(IN GFN) 
+(Z S E Z) 
+(IN EPRIMEFN) 
+(S E Z) 
+(IN SFN) 
+(S E Z) 
+(IN XFN) 
+(E Z) 
+(IN SFN) 
+(Z) Parse error. Parse Failed.
+NIL
+* (parse-input '(i y o z d s m e s))
+
+(IN IFN) 
+(I Y O Z D S M E S) 
+(IN EFN) 
+(Y O Z D S M E S) 
+(IN GFN) 
+(Y O Z D S M E S) 
+(IN EPRIMEFN) 
+(O Z D S M E S) 
+(IN GFN) 
+(Z D S M E S) 
+(IN EPRIMEFN) 
+(D S M E S) 
+(IN SFN) 
+(D S M E S) 
+(IN LFN) 
+(S M E S) 
+(IN LPRIMEFN) 
+(M E S) Parse error. Parse Failed.
+NIL
+* (parse-input '(i z o z s e s s s s))
+
+(IN IFN) 
+(I Z O Z S E S S S S) 
+(IN EFN) 
+(Z O Z S E S S S S) 
+(IN GFN) 
+(Z O Z S E S S S S) 
+(IN EPRIMEFN) 
+(O Z S E S S S S) 
+(IN GFN) 
+(Z S E S S S S) 
+(IN EPRIMEFN) 
+(S E S S S S) 
+(IN SFN) 
+(S E S S S S) 
+(IN XFN) 
+(E S S S S) 
+(IN SFN) 
+(S S S S) Parse error. Parse Failed.
+NIL
+* (parse-input '(i x d s s d))
+
+(IN IFN) 
+(I X D S S D) 
+(IN EFN) 
+(X D S S D) 
+(IN GFN) 
+(X D S S D) 
+(IN EPRIMEFN) 
+(D S S D) 
+(IN SFN) 
+(D S S D) 
+(IN LFN) 
+(S S D) 
+(IN LPRIMEFN) 
+(S D) 
+(IN LPRIMEFN) 
+(D) Parse error. Parse Failed.
+NIL
+* (parse-input '(i x b s s s s d))
+
+(IN IFN) 
+(I X B S S S S D) 
+(IN EFN) 
+(X B S S S S D) 
+(IN GFN) 
+(X B S S S S D) 
+(IN EPRIMEFN) 
+(B S S S S D) 
+(IN SFN) 
+(B S S S S D) Parse error. Parse Failed.
+NIL
+* (SB-EXT:EXIT)
+[0;32m@soccerzico [0m➜ [1;34m/workspaces/csci-330-homeworks-soccerzico [0;36m([1;31mmain[0;36m) [0m$ exi t
+exit
+
+Script done on 2025-03-18 21:48:33+00:00 [COMMAND_EXIT_CODE="0"]
